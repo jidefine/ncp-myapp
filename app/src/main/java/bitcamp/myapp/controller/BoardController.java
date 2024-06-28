@@ -37,7 +37,7 @@ public class BoardController {
 
   @Autowired private BoardService boardService;
   @Autowired private ObjectStorageService objectStorageService;
-  private String bucketName = "bitcamp-bucket-53";
+  private String bucketName = "ncp08-bucket-06281130";
 
   @PostMapping
   public Object insert(
