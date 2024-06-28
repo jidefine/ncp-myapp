@@ -147,7 +147,7 @@ http://서버주소:8080
 
 젠킨스 사용 시작!
 
-### jenkins:lts-jdk11을 사용한 경우 JDK 17 설치
+### jenkins:lts-jdk11을 사용한 경우 JDK 17 설치(이미 JDK 17 사용 중이라서 건너뛰기)
 
 root 사용자로 젠킨스 컨테이너에 접속하기
 
@@ -155,6 +155,7 @@ root 사용자로 젠킨스 컨테이너에 접속하기
 호스트# docker exec -itu 0 my-jenkins bash
 컨테이너/# apt-get update
 컨테이너/# apt-get install openjdk-17-jdk -y
+이렇게 설치하면 JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
 ```
 
 (docker inspect my-jenkins 에서 확인 가능)
@@ -166,7 +167,7 @@ root 사용자로 젠킨스 컨테이너에 접속하기
     - JDK
       - 'Add JDK' 클릭
         - Name: `openjdk-17`
-        - JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
+        - JAVA_HOME: `/opt/java/openjdk/`
     - SAVE 클릭
 
 ### github.com의 프로젝트 연동
@@ -181,10 +182,10 @@ Dashboard
   - General
     - 설명: `빌드 테스트1`
     - `GitHub project` 체크
-      - Project url: `https://github.com/eomjinyoung/bitcamp-myapp.git`
+      - Project url: `https://github.com/jidefine/ncp-myapp.git`
   - 소스 코드 관리
     - `Git` 선택
-      - Repository URL: `https://github.com/eomjinyoung/bitcamp-myapp.git`
+      - Repository URL: `https://github.com/jidefine/ncp-myapp.git`
       - Credentials:
         - Add 버튼 클릭: `Add Jenkins` 선택
         - `Username with Password` 선택
